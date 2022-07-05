@@ -63,6 +63,7 @@ func produce(log Logger, database service.Database, messaging service.Messaging,
 	}
 
 	if len(*messages) == 0 {
+		close()
 		log.Println("Nothing to process")
 		return
 	}
